@@ -1,5 +1,4 @@
-	
-	require 'sinatra' # includes gem to process web pages
+require 'sinatra' # includes gem to process web pages
 set :bind, '0.0.0.0' # sets default url address to localhost
 
 $myinfo = "Pizza Team" 
