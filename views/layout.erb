@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>#sets up the background info and meta data about the page, this is not loaded on the main body of the webpage 
+	<meta charset="UTF-8"> #specifies the character encoding to Unicode for te html document
+<meta name="viewport" content="width=device-width"> #specifies that the pizza wiki content should only be as wide as the display its showing on
+<meta name="description" content="This is my new Wiki app" /> #useful for search engens, as it allows relevant serach queerys to be mached with the page.
+<meta name="keywords" content="wiki, pizza, blog, memes"/> #also so useful for search engens, allows the page to show up when a search using the keywords is made
+<link rel="stylesheet" href="/style.css" type="text/css" /> #adds a external style sheet, this allows the webpages to be more consistent in style, and makes updating style easier across webpages.
+	<title>Pizza Wiki</title> # specifies that "Pizza Wiki" shows up in the browser tab
+	</head>
+
+<body>#loaded on teh main body of the webpage
+<div class="main_container"></div># allows the following elements to be clumped together. 
+<header>#represents a container
+<b>Menu</b><br>
+<a href="/">Home</a><br> #this and the following creates hyperlinks to the relevant webpages
+<a href="/create">Create</a><br>
+<a href="/about">About</a><br>
+<a href="/edit">Edit</a><br>
+</header>
+
+<%= yield %> #This hands over the controls back to the erb, which this erb is embeded in.
+
+<footer>#incerts content underneath all other content 
+<p>Team Pizza</p>
+</footer>
+</body>
