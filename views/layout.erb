@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>#sets up the background info and meta data about the page, this is not loaded on the main body of the webpage 
+<head>#sets up the background info and meta data about the page, this is not loaded on the main body of the webpage
 	<meta charset="UTF-8"> #specifies the character encoding to Unicode for te html document
 <meta name="viewport" content="width=device-width"> #specifies that the pizza wiki content should only be as wide as the display its showing on
 <meta name="description" content="This is my new Wiki app" /> #useful for search engens, as it allows relevant serach queerys to be mached with the page.
@@ -10,18 +10,32 @@
 	</head>
 
 <body>#loaded on teh main body of the webpage
-<div class="main_container"></div># allows the following elements to be clumped together. 
+<div class="main_container"></div># allows the following elements to be clumped together.
 <header>#represents a container
 <b>Menu</b><br>
 <a href="/">Home</a><br> #this and the following creates hyperlinks to the relevant webpages
 <a href="/create">Create</a><br>
 <a href="/about">About</a><br>
 <a href="/edit">Edit</a><br>
+<% if $credentials %>
+   <% if $credentials[0] != '' %>
+        Logged in as <a href="/user/<%= $credentials[0] %>"><b><%= $credentials[0] %></b></a> |
+        <a href="/logout">Logout</a> |
+        <% if $credentials[0] == "Admin" %>
+            <a href="/admincontrols">Admin Controls</a>
+        <% end %>
+    <% else %>
+        <a href="/login">Login</a>
+    <% end %>
+<% else %>
+   <a href="/login">Login</a>
+<% end %>
+
 </header>
 
 <%= yield %> #This hands over the controls back to the erb, which this erb is embeded in.
 
-<footer>#incerts content underneath all other content 
+<footer>#inserts content underneath all other content
 <p>Team Pizza</p>
 </footer>
 </body>
